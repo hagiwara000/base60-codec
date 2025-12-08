@@ -1,0 +1,31 @@
+{
+  "name": "base60-codec",
+  "version": "0.1.0",
+  "description": "A tiny, deterministic Base60 encoder/decoder for UUID, ULID, Int64, and BigInt.",
+  "author": "Shinnosuke Hagiwara <hagiwara000@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.7.0",
+    "vitest": "^1.5.0"
+  }
+}
