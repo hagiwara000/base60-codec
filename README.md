@@ -1,3 +1,17 @@
+<p align="center">
+  <a href="https://www.npmjs.com/package/base60-codec">
+    <img src="https://img.shields.io/npm/v/base60-codec?color=blue&label=npm" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/base60-codec">
+    <img src="https://img.shields.io/npm/dm/base60-codec?color=brightgreen" alt="npm downloads">
+  </a>
+  <img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
+  <a href="https://github.com/hagiwara000/base60-codec/actions/workflows/ci.yml">
+    <img src="https://github.com/hagiwara000/base60-codec/actions/workflows/ci.yml/badge.svg" alt="CI Status">
+  </a>
+</p>
+
 # 📦 base60-codec
 
 A tiny, fast, and deterministic Base60 encoder/decoder for TypeScript.

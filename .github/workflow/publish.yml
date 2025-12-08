@@ -1,0 +1,31 @@
+name: Publish to npm (Trusted Publishing)
+
+on:
+  push:
+    tags:
+      - "v*.*.*"  # v1.2.3 のようなタグ push で publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write   # ← Trusted Publishing に絶対必要
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci
+
+      # provenance 付きで publish
+      - name: Publish to npm registry
+        run: npm publish --provenance --access public
