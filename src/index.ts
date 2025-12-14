@@ -264,4 +264,5 @@ export function createBase60Codec(): Base60Codec {
 }
 
 const base60 = createBase60Codec();
+export { base60 };
 export default base60;

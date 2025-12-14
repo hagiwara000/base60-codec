@@ -11,8 +11,14 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "default": "./dist/index.js",
+        "base60": "./dist/index.js"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "base60": "./dist/index.cjs"
+      }
     }
   },
   "files": [
