@@ -3,7 +3,7 @@ name: Publish to npm (Trusted Publishing)
 on:
   push:
     tags:
-      - "v*.*.*"  # v1.2.3 のようなタグ push で publish
+      - "v*.*.*" # v1.2.3 のようなタグ push で publish
 
 jobs:
   publish:
@@ -11,7 +11,7 @@ jobs:
 
     permissions:
       contents: read
-      id-token: write   # ← Trusted Publishing に絶対必要
+      id-token: write # ← Trusted Publishing に絶対必要
 
     steps:
       - name: Checkout
@@ -29,3 +29,5 @@ jobs:
       # provenance 付きで publish
       - name: Publish to npm registry
         run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
