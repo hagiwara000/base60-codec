@@ -1,6 +1,6 @@
 {
   "name": "base60-codec",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A tiny, deterministic Base60 encoder/decoder for UUID, ULID, Int64, and BigInt.",
   "author": "Shinnosuke Hagiwara <hagiwara000@gmail.com>",
   "license": "MIT",
