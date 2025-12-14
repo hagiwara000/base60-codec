@@ -208,7 +208,7 @@ export function createBase60Codec(): Base60Codec {
       }
 
       // 128bit を Base60 で22文字に固定
-      const raw = this.encodeBigInt(value);
+      const raw = encodeBigInt(value);
 
       return leftPad(raw, FIXED_LEN_ULID) as Base60String;
     },
@@ -220,7 +220,7 @@ export function createBase60Codec(): Base60Codec {
       }
 
       // 1. Base60 → BigInt
-      const value = this.decodeToBigInt(text);
+      const value = decodeToBigInt(text);
 
       // 2. BigInt → 16 bytes
       const bytes = bigIntToBytes(value, 16); // 128bit fixed
