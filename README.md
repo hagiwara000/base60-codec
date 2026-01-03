@@ -95,7 +95,7 @@ compareAsBigInt(a: Base60String, b: Base60String): -1 | 0 | 1
 ### ✅ Type-safe Base60 string guard
 
 ```javascript
-if (base60.isValidBase60(text)) {
+if (isValidBase60(text)) {
   // text is now typed as Base60String
 }
 ```

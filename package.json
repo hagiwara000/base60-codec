@@ -32,5 +32,8 @@
     "typescript": "^5.7.0",
     "vitest": "^1.5.0"
   },
-  "repository": "github:hagiwara000/base60-codec"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagiwara000/base60-codec.git"
+  }
 }
