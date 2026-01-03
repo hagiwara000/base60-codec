@@ -27,67 +27,76 @@ Ideal for generating compact, URL-safe IDs with predictable ordering.
 
 ## 🚀 Installation
 
-```
+```shell
 npm install base60-codec
 ```
 
 ## 🧩 Quick Usage
 
-```
-import { base60 } from "base60-codec";
+```javascript
+import { encodeUUID, decodeUUID } from "base60-codec";
 
 const uuid = "550e8400-e29b-41d4-a716-446655440000";
 
 // Encode as 22-char Base60
-const encoded = base60.encodeUUID(uuid);
+const encoded = encodeUUID(uuid);
 console.log(encoded); // e.g. "09EzBRW... (22 chars)"
 
 // Decode back to UUID
-console.log(base60.decodeUUID(encoded));
+console.log(decodeUUID(encoded));
 // → "550e8400-e29b-41d4-a716-446655440000"
+```
+
+💡 Tip
+If you prefer grouped APIs, you can also import the base60 namespace:
+
+```javascript
+import base60 from "base60-codec";
+
+base60.encodeUUID(uuid);
 ```
 
 ## ✨ Features
 
 ### ✅ UUID (128-bit) → 22 chars
 
-```
+```javascript
 encodeUUID(uuid: string): string
 decodeUUID(id: Base60String): string
 ```
 
 ### ✅ ULID (26 chars Base32) → 22 chars
 
-```
+```javascript
 encodeULID(ulid: string): Base60String
 decodeULID(id: Base60String): string
 ```
 
 ### ✅ Int64 → 11 chars
 
-```
+```javascript
 encodeInt64(num: number | bigint): string
 decodeInt64(id: Base60String): bigint
 ```
 
 ### ✅ BigInt encoding
 
-```
+```javascript
 encodeBigInt(value: bigint, padLength?: number): string
 decodeToBigInt(text: Base60String): bigint
 ```
 
 ### ✅ Safe comparison
 
-```
+```javascript
 compareAsBigInt(a: Base60String, b: Base60String): -1 | 0 | 1
 ```
 
 ### ✅ Type-safe Base60 string guard
 
-```
+```javascript
 if (base60.isValidBase60(text)) {
-// text is now typed as Base60String
+  // text is now typed as Base60String
 }
 ```
 
@@ -107,7 +116,7 @@ if (base60.isValidBase60(text)) {
 
 Leading zero bytes are dropped:
 
-```
+```javascript
 encodeBytes(Uint8Array([0,1,2]))
 ↓
 decodeToBytes(...) → [1,2]
@@ -119,7 +128,7 @@ UUID / ULID / Int64 are unaffected because they use fixed 16-byte / 8-byte decod
 
 ## 🧪 Testing
 
-```
+```shell
 npm test
 ```
 
