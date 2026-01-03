@@ -264,5 +264,20 @@ export function createBase60Codec(): Base60Codec {
 }
 
 const base60 = createBase60Codec();
+export const {
+  encodeBytes,
+  decodeToBytes,
+  encodeBigInt,
+  decodeToBigInt,
+  encodeInt64,
+  decodeInt64,
+  encodeUUID,
+  decodeUUID,
+  encodeULID,
+  decodeULID,
+  compareAsBigInt,
+  isValidBase60,
+} = base60;
+
 export { base60 };
 export default base60;
